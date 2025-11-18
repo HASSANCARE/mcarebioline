@@ -1,0 +1,66 @@
+/* FICHIER : styles.css */
+:root{
+  --primary-green:#2E8B57;
+  --deep-forest:#1A3C27;
+  --secondary-gold:#D4AF37;
+  --accent-cream:#F5F5DC;
+  --light-mint:#E8F5E8;
+  --pure-white:#FFFFFF;
+  --text-dark:#2C3E30;
+  --border-radius:12px;
+  --transition:all .28s ease;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: "Montserrat", sans-serif;
+  color:var(--text-dark);
+  background:var(--light-mint);
+  line-height:1.6;
+  font-size:16px;
+}
+
+.container{width:90%;max-width:1200px;margin:0 auto;padding:0 15px}
+
+header{background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);position:sticky;top:0;z-index:1000}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.logo{display:flex;flex-direction:column;align-items:flex-start}
+.logo-main{font-family:"Playfair Display",serif;font-size:24px;color:var(--primary-green);font-weight:700}
+.logo-sub{font-size:11px;color:var(--secondary-gold);letter-spacing:2px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:linear-gradient(135deg,var(--primary-green),var(--deep-forest));color:white;border:0;cursor:pointer;font-weight:700}
+.btn-outline{background:transparent;border:2px solid var(--primary-green);color:var(--primary-green)}
+.icon-btn{background:transparent;border:none;padding:8px;border-radius:8px;cursor:pointer}
+
+.hero{padding:90px 0;text-align:center;color:white;background:linear-gradient(135deg,rgba(46,139,87,0.85),rgba(26,60,39,0.9))}
+.hero h1{font-size:2.6rem;margin-bottom:8px}
+
+.content-section{background:rgba(255,255,255,0.92);padding:40px;border-radius:12px;margin:30px 0}
+
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.product-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.06);position:relative;border:1px solid rgba(0,0,0,0.04)}
+.product-badge{position:absolute;top:12px;left:12px;background:var(--secondary-gold);color:white;padding:6px 10px;border-radius:999px;font-weight:700;font-size:0.85rem}
+.product-img{height:250px;overflow:hidden;background:#f6f6f6}
+.product-img img{width:100%;height:100%;object-fit:cover;display:block}
+.product-content{padding:18px}
+.product-title{font-weight:700;margin-bottom:6px}
+.product-price{color:var(--primary-green);font-weight:800;font-size:1.25rem;margin-top:8px}
+.product-actions{display:flex;gap:10px;margin-top:14px}
+
+.cart-modal{position:fixed;top:0;right:-420px;width:100%;max-width:420px;height:100vh;background:var(--pure-white);box-shadow:-6px 0 30px rgba(0,0,0,0.12);transition:var(--transition);z-index:1200;display:flex;flex-direction:column}
+.cart-modal[aria-hidden="false"]{right:0}
+.cart-header{display:flex;justify-content:space-between;align-items:center;padding:18px;background:linear-gradient(135deg,var(--primary-green),var(--deep-forest));color:white}
+.cart-items{padding:16px;flex:1;overflow:auto}
+.cart-item{display:flex;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #eee}
+.cart-item-img{width:80px;height:80px;border-radius:8px;background-size:cover;background-position:center;margin-right:12px;flex-shrink:0}
+.cart-item-details h4{margin-bottom:6px}
+.cart-total{padding:16px;border-top:1px solid #eee;background:var(--accent-cream)}
+
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1100;display:none}
+.overlay.active{display:block}
+
+@media(max-width:768px){
+  .hero h1{font-size:2rem}
+  .product-grid{grid-template-columns:1fr}
+  .header-top{gap:10px}
+}

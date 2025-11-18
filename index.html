@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>M Care BioLine - Soins Bio Naturels</title>
+  <meta name="description" content="Découvrez les soins bio M Care BioLine : shampoing naturel, dentifrice bio, déodorant sans aluminium. Formules 100% naturelles, certifiées bio et vegan.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="M Care BioLine — Soins Bio Naturels" />
+  <meta property="og:description" content="Soins biologiques naturels : shampoings, dentifrices, déodorants." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mcarebioline.be" />
+  <meta property="og:image" content="https://mcarebioline.be/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Organization schema (existait déjà) -->
+  <script type="application/ld+json" id="org-jsonld">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"M Care BioLine",
+    "url":"https://mcarebioline.be",
+    "logo":"https://mcarebioline.be/logo.png"
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <div class="container header-top">
+      <div class="logo" aria-label="M Care BioLine">
+        <span class="logo-main">M Care BioLine</span>
+        <span class="logo-sub">LUXE NATUREL</span>
+      </div>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <div class="nav-categories">
+          <a href="#soins-cheveux">Soins Cheveux</a>
+          <a href="#hygiene-buccale">Hygiène Buccale</a>
+          <a href="#soins-corps">Soins Corps</a>
+          <a href="#nouvelles-arrivages">Nouveautés</a>
+          <a href="#best-sellers">Best-sellers</a>
+        </div>
+      </nav>
+
+      <div class="header-actions" role="toolbar" aria-label="Actions">
+        <button class="icon-btn" aria-label="Rechercher"><i class="fas fa-search" aria-hidden="true"></i></button>
+        <button class="icon-btn" aria-label="Mon compte"><i class="fas fa-user" aria-hidden="true"></i></button>
+        <div class="cart-icon" style="position:relative;">
+          <button id="open-cart" class="icon-btn" aria-label="Voir le panier" aria-controls="cart-modal" aria-haspopup="dialog">
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+          </button>
+          <span class="cart-count" aria-live="polite" id="cart-count">0</span>
+        </div>
+        <button class="mobile-menu icon-btn" aria-label="Menu mobile"><i class="fas fa-bars" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="container hero-content">
+        <h1 id="hero-title">La Nature dans sa Plus Pure Expression</h1>
+        <p>Votre Beauté, Notre Engagement</p>
+        <div class="hero-actions">
+          <a href="#produits" class="btn">Découvrir nos produits</a>
+          <a href="#histoire" class="btn btn-outline">Notre histoire</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="special-offers" aria-label="Offres spéciales">
+      <div class="container">
+        <div class="offer-banner">🆕 <strong>Nouveau Client ?</strong> -15% sur votre première commande avec le code BIENVENUE15</div>
+        <div class="offer-banner">📦 <strong>Livraison Offerte</strong> dès 49€ d'achat</div>
+        <div class="offer-banner">💚 <strong>Programme Fidélité</strong> 1€ dépensé = 1 point</div>
+      </div>
+    </section>
+
+    <section class="section-banner" id="categories" aria-labelledby="categories-title">
+      <div class="container">
+        <h2 id="categories-title">Nos Catégories</h2>
+        <p><strong>Découvrez notre gamme complète de soins biologiques pour chaque besoin</strong></p>
+      </div>
+    </section>
+
+    <section class="content-section" id="produits" aria-labelledby="produits-title">
+      <div class="container">
+        <h2 class="section-title" id="produits-title">Produits</h2>
+
+        <div class="product-filters" aria-hidden="false">
+          <div class="filter-group">
+            <label for="category-filter">Catégorie</label>
+            <select id="category-filter" class="filter-category">
+              <option value="all">Toutes catégories</option>
+              <option value="shampoo">Shampoing</option>
+              <option value="toothpaste">Dentifrice</option>
+              <option value="deodorant">Déodorant</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="ingredient-filter">Ingrédients</label>
+            <select id="ingredient-filter" class="filter-ingredients">
+              <option value="all">Tous les ingrédients</option>
+              <option value="aloe">Aloe Vera</option>
+              <option value="coconut">Noix de Coco</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="skin-type-filter">Type de peau/cheveux</label>
+            <select id="skin-type-filter" class="filter-skin-type">
+              <option value="all">Tous types</option>
+              <option value="sensitive">Sensible</option>
+              <option value="dry">Sèche</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="product-grid" id="product-grid">
+          <!-- Product 1 -->
+          <article class="product-card" data-id="1" data-name="Shampoing Doux à l'Aloe Vera" data-price="19.90" data-image="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" data-sku="SH-ALO-001" data-availability="InStock" data-rating="4.6" data-reviewcount="128" data-url="https://mcarebioline.be/produit/shampoing-aloe" itemscope itemtype="https://schema.org/Product" aria-labelledby="p1-title">
+            <span class="product-badge">Nouveau</span>
+            <div class="product-img">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Shampoing doux à l'Aloe Vera" />
+            </div>
+            <div class="product-content">
+              <h3 class="product-title" id="p1-title" itemprop="name">Shampoing Doux à l'Aloe Vera</h3>
+              <div class="product-rating" aria-hidden="true">★★★★☆ <span>(128)</span></div>
+              <p class="product-description" itemprop="description">Shampoing naturel pour cheveux secs et abîmés. Formule 98% d'origine naturelle, sans sulfates.</p>
+              <div class="product-benefits"><ul><li>Hydrate</li><li>Redonne brillance</li><li>Convient aux cheveux sensibles</li></ul></div>
+              <div class="product-price"><span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" class="price-value">19.90</span></span></div>
+              <div class="product-actions">
+                <button class="btn add-to-cart" aria-label="Ajouter Shampoing Doux à l'Aloe Vera au panier"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</button>
+                <button class="btn btn-outline" aria-label="Ajouter aux favoris"><i class="far fa-heart" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card" data-id="2" data-name="Déodorant Naturel à la Pierre d'Alun" data-price="14.50" data-image="https://images.unsplash.com/photo-1594736797933-d0ea3ff8db41?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" data-sku="DEO-ALUN-001" data-availability="InStock" data-rating="4.5" data-reviewcount="96" data-url="https://mcarebioline.be/produit/deodorant-alun" itemscope itemtype="https://schema.org/Product" aria-labelledby="p2-title">
+            <span class="product-badge">Best-seller</span>
+            <div class="product-img">
+              <img src="https://images.unsplash.com/photo-1594736797933-d0ea3ff8db41?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Déodorant naturel pierre d'alun" />
+            </div>
+            <div class="product-content">
+              <h3 class="product-title" id="p2-title" itemprop="name">Déodorant Naturel à la Pierre d'Alun</h3>
+              <div class="product-rating" aria-hidden="true">★★★★☆ <span>(96)</span></div>
+              <p class="product-description" itemprop="description">Déodorant 100% minéral sans aluminium. Efficace 24h, respecte la peau.</p>
+              <div class="product-benefits"><ul><li>Protection 24h</li><li>Ne bouche pas les pores</li></ul></div>
+              <div class="product-price"><span class="price"><span class="price-value">14.50</span> €</span></div>
+              <div class="product-actions">
+                <button class="btn add-to-cart" aria-label="Ajouter Déodorant Naturel à la Pierre d'Alun au panier"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</button>
+                <button class="btn btn-outline" aria-label="Ajouter aux favoris"><i class="far fa-heart" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card" data-id="3" data-name="Dentifrice Bio au Charbon Actif" data-price="9.90" data-image="https://images.unsplash.com/photo-1585435557343-3b092031d5ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" data-sku="TOOTH-CHAR-001" data-availability="InStock" data-rating="4.8" data-reviewcount="204" data-url="https://mcarebioline.be/produit/dentifrice-charbon" itemscope itemtype="https://schema.org/Product" aria-labelledby="p3-title">
+            <div class="product-img">
+              <img src="https://images.unsplash.com/photo-1585435557343-3b092031d5ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Dentifrice bio charbon actif" />
+            </div>
+            <div class="product-content">
+              <h3 class="product-title" id="p3-title" itemprop="name">Dentifrice Bio au Charbon Actif</h3>
+              <div class="product-rating" aria-hidden="true">★★★★★ <span>(204)</span></div>
+              <p class="product-description" itemprop="description">Dentifrice naturel blanchissant au charbon actif. Sans fluor ajouté.</p>
+              <div class="product-benefits"><ul><li>Blanchit naturellement</li><li>Purifie l'haleine</li></ul></div>
+              <div class="product-price"><span class="price"><span class="price-value">9.90</span> €</span></div>
+              <div class="product-actions">
+                <button class="btn add-to-cart" aria-label="Ajouter Dentifrice Bio au Charbon Actif au panier"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</button>
+                <button class="btn btn-outline" aria-label="Ajouter aux favoris"><i class="far fa-heart" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-story" id="histoire" aria-labelledby="histoire-title">
+      <div class="container">
+        <h2 class="section-title" id="histoire-title">Notre Histoire</h2>
+        <p style="max-width: 800px; margin: 0 auto 40px;">Née d'une passion pour le bien-être authentique, <strong>M Care BioLine</strong> a été créée par des experts en cosmétique naturelle.</p>
+        <div class="story-points">
+          <div class="story-point"><h3>🌿 Pureté</h3><p>Ingrédients 100% naturels.</p></div>
+          <div class="story-point"><h3>🔬 Science</h3><p>Formules développées en laboratoire.</p></div>
+          <div class="story-point"><h3>💚 Engagement</h3><p>Emballages recyclables, certification vegan.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="customer-reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <h2 class="section-title" id="reviews-title">Ce que nos clients en pensent</h2>
+        <div class="reviews-grid">
+          <div class="review-card"><div class="stars" aria-hidden="true">★★★★★</div><p>"Le meilleur shampoing bio..."</p><span class="review-author">- Marie L.</span></div>
+          <div class="review-card"><div class="stars" aria-hidden="true">★★★★★</div><p>"Enfin un déodorant naturel qui fonctionne..."</p><span class="review-author">- Thomas P.</span></div>
+          <div class="review-card"><div class="stars" aria-hidden="true">★★★★☆</div><p>"Le dentifrice au charbon est incroyable." </p><span class="review-author">- Sophie M.</span></div>
+        </div>
+
+        <div class="trust-badges">
+          <div class="trust-badge"><i class="fas fa-leaf" aria-hidden="true"></i><span>100% Naturel</span></div>
+          <div class="trust-badge"><i class="fas fa-recycle" aria-hidden="true"></i><span>Écoresponsable</span></div>
+          <div class="trust-badge"><i class="fas fa-heart" aria-hidden="true"></i><span>Vegan</span></div>
+          <div class="trust-badge"><i class="fas fa-award" aria-hidden="true"></i><span>Certifié Bio</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <div class="container">
+        <h2 id="newsletter-title">Inscrivez-vous à notre newsletter</h2>
+        <p><strong>Recevez nos offres exclusives</strong></p>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <input type="email" id="newsletter-email" name="email" placeholder="Votre adresse email" required aria-label="Votre adresse email">
+          <button type="submit" class="btn">S'abonner</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" aria-labelledby="footer-title">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>M Care BioLine</h3>
+        <p><strong>La Nature dans sa Plus Pure Expression.</strong></p>
+        <div class="social-links" aria-label="Réseaux sociaux">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h3>Liens rapides</h3><ul><li><a href="#accueil">Accueil</a></li><li><a href="#produits">Produits</a></li></ul></div>
+      <div class="footer-col"><h3>Contact</h3><ul><li><strong>Boulevard Auguste Reyers, 161<br/>1030 Bruxelles</strong></li><li><strong>+32 470 77 10 10</strong></li><li><strong>contact@mcarebioline.be</strong></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2024 M Care BioLine. Tous droits réservés.</p></div>
+  </footer>
+
+  <!-- Cart modal -->
+  <aside id="cart-modal" class="cart-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cart-title">
+    <div class="cart-header">
+      <h2 id="cart-title">Votre Panier</h2>
+      <button class="close-cart icon-btn" aria-label="Fermer le panier"><i class="fas fa-times" aria-hidden="true"></i></button>
+    </div>
+    <div class="cart-items" tabindex="0" id="cart-items" aria-live="polite"></div>
+    <div class="cart-total">
+      <div class="total-row"><span><strong>Sous-total:</strong></span><span class="subtotal">0,00 €</span></div>
+      <div class="total-row"><span><strong>Livraison:</strong></span><span class="shipping">4,90 €</span></div>
+      <div class="total-row total-final"><span><strong>Total:</strong></span><span class="total">4,90 €</span></div>
+      <button class="btn checkout-btn">Passer la commande</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
